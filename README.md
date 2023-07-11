@@ -1,4 +1,5 @@
 # twitterscraper
 
-input -> link of thread 
-output -> dataframe of all tweets in thread with account handle, time of tweet, likes, retweets, views.
+input : text file of urls
+output : csv of all tweets in thread with account handle and tweet
+
