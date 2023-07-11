@@ -33,12 +33,16 @@ driver = webdriver.Firefox()
 driver.get(url)
 time.sleep(3)
 
-driver.find_element(By.XPATH,'//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[5]/label/div/div[2]/div/input').send_keys(str(os.environ.get('TWT_USERN')))
-driver.find_element(By.XPATH,'//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div/div/div[6]/div').click()
+
+keyboard.type('\t\t\t\t')
+keyboard.type(os.environ.get('TWT_USERN'))
+keyboard.press(Key.enter)
+
 time.sleep(2)
 keyboard.type(os.environ.get('TWT_PSWD'))
 driver.find_element(By.XPATH,'//*[@id="layers"]/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div[2]/div/div[1]/div/div/div/div').click()
-login_wait = input("twitter logged in ? (Enter to continue)")
+
+time.sleep(3)
 
 with open('url.txt','r') as file:
     urls = file.readlines()
